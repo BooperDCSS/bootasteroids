@@ -41,6 +41,8 @@ class Player(circleshape.CircleShape):
         rotated_with_speed_vector = rotated_vector * PLAYER_SPEED * dt
         self.position += rotated_with_speed_vector
 
+    # if the cooldown timer is greater than 0, do nothing
+    # otherwise, set the cooldown timer to the CONSTANT and then draw bullet
     def shoot(self):
         if self.cooldown_timer > 0:
             return
@@ -52,6 +54,9 @@ class Player(circleshape.CircleShape):
         rotated_with_speed_shot = rotated_shot * PLAYER_SHOOT_SPEED
         bullet.velocity += rotated_with_speed_shot
 
+    # note that the cooldown timer can go below 0, but it doesn't matter
+    # because we always set it to the PLAYER_SHOOT_COOLDOWN_SECONDS constant
+    # if the timer is < 0, we can still shoot
     def update(self, dt):
         keys = pygame.key.get_pressed()
         self.cooldown_timer -= dt
