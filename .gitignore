@@ -9,5 +9,6 @@ wheels/
 # Virtual environments
 .venv
 
-# game_state addition via boot.dev
+# additions per boot.dev tutorial instructions
 game_state.jsonl
+game_events.jsonl
