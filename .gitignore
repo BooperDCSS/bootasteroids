@@ -10,5 +10,5 @@ wheels/
 .venv
 
 # additions per boot.dev tutorial instructions
-game_state.jsonl
-game_events.jsonl
+game_state*.jsonl
+game_events*.jsonl
